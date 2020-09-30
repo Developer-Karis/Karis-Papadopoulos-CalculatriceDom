@@ -10,6 +10,7 @@
     margin: 34px;
     width: 80%;
     padding: 10px;
+    font-size: 20px;
     margin-bottom: 20px;
 }
 
@@ -37,4 +38,19 @@
 
 .grid-item:active {
     background-color: grey;
+}
+
+.grid-item:nth-child(4n) {
+    background-color: #0579FB;
+    color: white;
+}
+
+.grid-item:nth-child(13) {
+    background-color: #DD4A46;
+    color: white;
+}
+
+.grid-item:nth-child(15) {
+    background-color: #40A745;
+    color: white;
 }
