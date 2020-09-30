@@ -5,7 +5,7 @@ let mainDiv = document.createElement("div");
 myBody.prepend(mainDiv);
 mainDiv.setAttribute("id", "content");
 
-let myInput = document.createElement("input");
+export let myInput = document.createElement("input");
 mainDiv.appendChild(myInput);
 myInput.setAttribute("id", "inputNumber");
 
@@ -15,7 +15,7 @@ ligne.setAttribute("id", "ligne");
 
 // Créer row et cols pour les buttons
 
-let myDivRow = document.createElement("div");
+export let myDivRow = document.createElement("div");
 mainDiv.appendChild(myDivRow);
 myDivRow.setAttribute("id", "gridContainer");
 
@@ -26,8 +26,9 @@ let tab = [
     "C", "0", "=", "/"
 ];
 
+let gridItem;
 for (let i = 0; i < tab.length; i++) {
-    let gridItem = document.createElement("button");
+    gridItem = document.createElement("button");
     gridItem.setAttribute("class", "grid-item");
     myDivRow.appendChild(gridItem);
     gridItem.innerText = tab[i];

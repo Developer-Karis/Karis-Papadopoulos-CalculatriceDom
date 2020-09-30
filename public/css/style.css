@@ -12,10 +12,11 @@
     padding: 10px;
     font-size: 20px;
     margin-bottom: 20px;
+    border: 3px solid lightcoral;
 }
 
 #ligne {
-    border: 2px solid blue;
+    border: 2px solid green;
 }
 
 #gridContainer {
@@ -33,7 +34,7 @@
     border: none;
     cursor: pointer;
     outline: none;
-    background-color: #DDDDDD;
+    background-color: #dddddd;
 }
 
 .grid-item:active {
@@ -41,16 +42,28 @@
 }
 
 .grid-item:nth-child(4n) {
-    background-color: #0579FB;
+    background-color: #0579fb;
     color: white;
+}
+
+.grid-item:nth-child(4n):active {
+    background-color: grey;
 }
 
 .grid-item:nth-child(13) {
-    background-color: #DD4A46;
+    background-color: #dd4a46;
     color: white;
 }
 
+.grid-item:nth-child(13):active {
+    background-color: grey;
+}
+
 .grid-item:nth-child(15) {
-    background-color: #40A745;
+    background-color: #40a745;
     color: white;
+}
+
+.grid-item:nth-child(15):active {
+    background-color: grey;
 }
