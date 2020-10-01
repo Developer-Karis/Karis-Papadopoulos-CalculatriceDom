@@ -9,7 +9,7 @@ myInput.setAttribute("onkeydown", "return event.keyCode !== 69");
 
 let arr = Array.from(myDivRow.children);
 
-let tabOp = ["+", "-", "*", "/"]; 46
+let tabOp = ["+", "-", "*", "/"];
 let firstNumber;
 let result;
 let para;
@@ -53,34 +53,36 @@ arr.forEach(element => {
 
 // Gérer les touches du clavier
 
-$(document).keypress(function (e) {
-    if (e.key >= 0 && e.key <= 9) {
-        myInput.value += e.key;
-    } else if (e.key == "=" || e.key == "Enter") {
-        if (para.includes("+")) {
-            para = myInput.value + "=";
-            result = parseInt(firstNumber) + parseInt(myInput.value);
-            myInput.value = result;
-        } else if (para.includes("-")) {
-            para = myInput.value + "=";
-            result = parseInt(firstNumber) - parseInt(myInput.value);
-            myInput.value = result;
-        } else if (para.includes("*")) {
-            para = myInput.value + "=";
-            result = parseInt(firstNumber) * parseInt(myInput.value);
-            myInput.value = result;
-        } else if (para.includes("/")) {
-            para = myInput.value + "=";
-            result = parseInt(firstNumber) / parseInt(myInput.value);
-            myInput.value = result;
-        }
-    } else {
-        tabOp.forEach(element => {
-            if (e.key.includes(element)) {
-                firstNumber = myInput.value;
-                para = myInput.value + element;
-                myInput.value = "";
+myInput.addEventListener("focusout", () => {
+    $(document).keypress(function (e) {
+        if (e.key >= 0 && e.key <= 9) {
+            myInput.value += e.key;
+        } else if (e.key == "=" || e.key == "Enter") {
+            if (para.includes("+")) {
+                para = myInput.value + "=";
+                result = parseInt(firstNumber) + parseInt(myInput.value);
+                myInput.value = result;
+            } else if (para.includes("-")) {
+                para = myInput.value + "=";
+                result = parseInt(firstNumber) - parseInt(myInput.value);
+                myInput.value = result;
+            } else if (para.includes("*")) {
+                para = myInput.value + "=";
+                result = parseInt(firstNumber) * parseInt(myInput.value);
+                myInput.value = result;
+            } else if (para.includes("/")) {
+                para = myInput.value + "=";
+                result = parseInt(firstNumber) / parseInt(myInput.value);
+                myInput.value = result;
             }
-        });
-    }
-});
+        } else {
+            tabOp.forEach(element => {
+                if (e.key.includes(element)) {
+                    firstNumber = myInput.value;
+                    para = myInput.value + element;
+                    myInput.value = "";
+                }
+            });
+        }
+    });
+})

@@ -1,6 +1,11 @@
 let myBody = document.querySelector("body");
 console.log(myBody);
 
+let myTitle = document.createElement("h1");
+myTitle.setAttribute("id", "title");
+myTitle.innerText = "Calculatrice DOM";
+myBody.prepend(myTitle);
+
 let mainDiv = document.createElement("div");
 myBody.prepend(mainDiv);
 mainDiv.setAttribute("id", "content");
