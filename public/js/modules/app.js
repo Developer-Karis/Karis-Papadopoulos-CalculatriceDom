@@ -43,7 +43,6 @@ arr.forEach(element => {
                 if (e.target.innerText.includes(element)) {
                     firstNumber = myInput.value;
                     para = myInput.value + element;
-                    console.log(para);
                     myInput.value = "";
                 }
             });
@@ -57,6 +56,8 @@ myInput.addEventListener("focusout", () => {
     $(document).keypress(function (e) {
         if (e.key >= 0 && e.key <= 9) {
             myInput.value += e.key;
+        } else if (e.key == "C") {
+            myInput.value = "";
         } else if (e.key == "=" || e.key == "Enter") {
             if (para.includes("+")) {
                 para = myInput.value + "=";
