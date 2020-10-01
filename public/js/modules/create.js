@@ -1,4 +1,4 @@
-let myBody = document.querySelector("body");
+export let myBody = document.querySelector("body");
 console.log(myBody);
 
 let myTitle = document.createElement("h1");
